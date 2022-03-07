@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "portal-media": {
+      "hosting": {
+        "PORTAL-MEDIA": [
+          "portal-media"
+        ]
+      }
+    }
+  }
+}

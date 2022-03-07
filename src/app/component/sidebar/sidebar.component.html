@@ -1,0 +1,16 @@
+<nav id="sidebar" [class.active]="isSidebarOpen">
+    <div class="sidebar-header">
+        <p class="text-category font-roboto-slab mb-0">
+            {{ sidebarHeader }}
+        </p>
+    </div>
+    <div class="sidebar-body">
+        <ul class="list-unstyled">
+            <li class="nav-item" *ngFor="let item of sidebarMenu">
+                <a class="nav-link font-noto-sans" (click)="onNavigatePage(item)">
+                    {{ item.NamaMenu }}
+                </a>
+            </li>
+        </ul>
+    </div>
+</nav>

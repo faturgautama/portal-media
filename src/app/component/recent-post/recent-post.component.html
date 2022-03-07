@@ -1,0 +1,19 @@
+<div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12">
+        <div class="card mb-3 border-0" [class.transparent]="isTransparent" *ngFor="let posts of RecentPosts">
+            <div class="row g-0">
+                <div class="col-4 px-2">
+                    <img [src]="posts.FotoBerita" alt="foto-berita" class="img-recent-posts">
+                </div>
+                <div class="col-8 px-2">
+                    <p class="font-noto-sans text-title mb-1" [class.text-white]="isTransparent">
+                        {{ posts.JudulBerita }}
+                    </p>
+                    <p class="font-noto-sans text-date mb-1" [class.text-white]="isTransparent">
+                        {{ posts.TanggalBerita | date: "dd MMM yyyy" }}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

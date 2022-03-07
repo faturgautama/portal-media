@@ -1,0 +1,38 @@
+section#body {
+  height: 100vh;
+  max-height: 100vh;
+}
+
+.wrapper {
+  display: flex;
+  width: 100%;
+  align-items: stretch;
+}
+
+div.content {
+  z-index: 1;
+}
+
+.slide {
+  margin-left: 250px;
+  transition: all 0.3s;
+}
+
+p.text-description {
+  color: rgb(114, 114, 114);
+}
+
+@media only screen and (max-width: 768px) {
+  .slide {
+    margin-left: 0;
+    transition: all 0.3s;
+  }
+
+  div#social-links {
+    padding: 0 !important;
+  }
+
+  div#single-card-read-more {
+    padding: 0 !important;
+  }
+}

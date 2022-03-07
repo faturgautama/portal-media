@@ -1,0 +1,71 @@
+<div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="container">
+            <div class="row">
+                <!-- LIST KELUHAN -->
+                <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5 mb-2">
+                    <div class="card">
+                        <div class="card-body p-2">
+                            <ul class="list-group" *ngFor="let item of Keluhan">
+                                <li class="list-group-item shadow-sm rounded mb-2">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <h5 class="font-roboto-slab">
+                                                {{ item.JudulKeluhan }}
+                                            </h5>
+                                        </div>
+                                        <div class="col-10">
+                                            <p class="font-noto-sans mb-0">
+                                                {{ item.NamaPelapor }}
+                                            </p>
+                                        </div>
+                                        <div class="col-2">
+                                            <span class="badge bg-primary" (click)="onLihatDetailKeluhan(item)">
+                                                Lihat
+                                            </span>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- DETAIL KELUHAN -->
+                <div class="col-lg-7 col-md-7 col-sm-7 mb-2" [hidden]="Detail?.length < 1">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-12">
+                                    <h5 class="font-roboto-slab mb-2">
+                                        {{ Detail["JudulKeluhan"] }}
+                                    </h5>
+                                </div>
+                                <div class="col-12">
+                                    <p class="font-noto-sans mb-1 text-penulis">
+                                        {{ Detail["NamaPelapor"] }} - {{ Detail["NoHandphonePelapor"] }}
+                                    </p>
+                                </div>
+                                <div class="col-12">
+                                    <p class="font-noto-sans mb-2 text-penulis">
+                                        {{ Detail["AlamatPelapor"] }}
+                                    </p>
+                                </div>
+                                <div class="col-12">
+                                    <p class="font-roboto-slab mb-2 text-kepada">
+                                        {{ Detail["TujuanKeluhan"] }}
+                                    </p>
+                                </div>
+                                <div class="col-12">
+                                    <p class="font-roboto-slab mb-0 text-isi">
+                                        {{ Detail["IsiKeluhan"] }}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

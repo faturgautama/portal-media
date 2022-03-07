@@ -1,0 +1,33 @@
+.padding-top-25 {
+  padding-top: 25vh;
+}
+
+.image-svg {
+  width: 100%;
+  max-width: 100%;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.div-image {
+  border-right: 1px solid rgb(223, 223, 223);
+}
+
+@media only screen and (max-width: 768px) {
+  .padding-top-25 {
+    padding-top: 15vh;
+  }
+
+  .image-svg {
+    width: 75%;
+    max-width: 75%;
+  }
+
+  .div-image {
+    border-right: 1px solid rgb(223, 223, 223);
+    text-align: center !important;
+    margin-bottom: 3em;
+  }
+}

@@ -1,0 +1,20 @@
+<app-navbar (onClickBars)="onOpenSidebar($event)" [isAdmin]="false" [navbar-menu]="navbarMenu"></app-navbar>
+
+<section id="body">
+    <div class="">
+        <div class="content">
+            <div class="row mx-0 mb-4">
+                <div class="col-lg-12 col-md-12 col-sm-12 py-3 px-3">
+                    <div class="card">
+                        <div class="card-header bg-white card-header-blue">
+                            <p class="card-title font-noto-sans mb-0">Halaman Admin</p>
+                        </div>
+                        <div class="card-body">
+                            <router-outlet></router-outlet>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

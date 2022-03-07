@@ -1,0 +1,51 @@
+section#keluhan > .container {
+  height: 75vh;
+  max-height: 75vh;
+}
+
+p.text-disclaimer {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+@media only screen and (max-width: 575.98px) {
+  section#keluhan > .container {
+    height: 100% !important;
+    max-height: 100% !important;
+  }
+
+  h5.font-roboto-slab {
+    font-size: 21px !important;
+  }
+
+  .row > .col-lg-8.col-md-8.col-sm-8 > button.btn.btn-sm.btn-primary {
+    margin-right: 0 !important;
+  }
+
+  p.text-disclaimer {
+    font-size: 12px !important;
+    font-weight: 600;
+    text-align: justify;
+  }
+}
+
+@media only screen and (min-width: 575.99px) and (max-width: 1198.98px) {
+  section#keluhan > .container {
+    height: 100% !important;
+    max-height: 100% !important;
+  }
+
+  h5.font-roboto-slab {
+    font-size: 21px !important;
+  }
+
+  .row > .col-lg-8.col-md-8.col-sm-8 > button.btn.btn-sm.btn-primary {
+    margin-right: 0 !important;
+  }
+
+  p.text-disclaimer {
+    font-size: 12px !important;
+    font-weight: 600;
+    text-align: justify;
+  }
+}

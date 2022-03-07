@@ -1,0 +1,59 @@
+<div class="container">
+    <div class="row justify-content-center padding-top-25" *ngIf="isLoading">
+        <div class="col-lg-5 col-md-5 col-sm-5 text-center">
+            <app-loading></app-loading>
+            <h3 style="color: #4299e1">Loading</h3>
+        </div>
+    </div>
+
+    <div class="row justify-content-center align-items-center padding-top-25" *ngIf="!isLoading">
+        <div class="col-lg-5 col-md-5 col-sm-5 div-image">
+            <img src="../../../assets/img/auth/undraw_secure_login_pdn4.svg" class="image-svg">
+        </div>
+
+        <div class="col-lg-5 col-md-5 col-sm-5">
+            <div class="alert alert-warning alert-dismissible fade show text-center " role="alert" *ngIf="error">
+                <strong>{{ error }}</strong>
+                <button type="button" class="btn-close" aria-label="Close" (click)="onHideErrorMessage()">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <div class="card">
+                <div class="card-header bg-white text-center py-2">
+                    <h5 class="mb-0 text-secondary">
+                        {{ authenticationMode ? "Login to your Admin Account" : "Register New Account" }}
+                    </h5>
+                </div>
+                <div class="card-body">
+                    <form #authForm="ngForm" (ngSubmit)="onSubmitForm(authForm)">
+                        <div class="form-group mb-2" *ngIf="!authenticationMode">
+                            <label for="displayName">Nama Lengkap</label>
+                            <input type="text" class="form-control" id="displayName" required ngModel
+                                name="displayName">
+                        </div>
+
+                        <div class="form-group mb-2">
+                            <label for="email">Username</label>
+                            <input type="text" class="form-control" id="email" required ngModel name="email">
+                        </div>
+
+                        <div class="form-group mb-2">
+                            <label for="password">Password</label>
+                            <input type="password" class="form-control" id="password" required ngModel name="password"
+                                minlength="1">
+                        </div>
+
+                        <div class="d-grid gap-2 mb-2">
+                            <button type="submit" class="btn btn-primary btn-block" [disabled]="!authForm.valid">
+                                Login
+                            </button>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

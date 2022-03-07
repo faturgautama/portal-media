@@ -1,0 +1,97 @@
+<div class="row" *ngIf="showLoading" style="margin-top: 25vh">
+    <div class="col-lg-12 col-md-12 col-sm-12 text-center">
+        <app-loading></app-loading>
+        <h3 style="color: #4299e1">Loading</h3>
+    </div>
+</div>
+
+<section id="single-page" *ngIf="!showLoading">
+    <app-navbar (onClickBars)="onOpenSidebar($event)" [isAdmin]="false" [isHidden]="hideNavbar"
+        [navbar-menu]="navbarMenu">
+    </app-navbar>
+
+    <div class="container p-3">
+        <div class="row mb-2">
+            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+
+                <!-- Image Berita -->
+                <div class="row justify-content-center">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 div-image p-2 text-center">
+                        <img [src]="ImageSinglePage" alt="image-berita" class="image-berita">
+                    </div>
+                </div>
+
+                <!-- Text Kategori Berita -->
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <p class="text-category font-noto-sans">{{ KategoriSinglePage }}</p>
+                    </div>
+                </div>
+
+                <!-- Text Judul Berita -->
+                <div class="row mb-2">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <h3 class="text-title font-roboto-slab">{{ JudulSinglePage }}</h3>
+                    </div>
+                </div>
+
+                <!-- Text Tanggal Berita -->
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <p class="text-tanggal font-noto-sans ">
+                            {{ KotaSinglePage }}, {{ TanggalSinglePage | date: "dd MMM yyyy" }}
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Text Author Berita -->
+                <div class="row border-bottom mb-2">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <p class="text-author font-noto-sans ">
+                            Penulis : {{ AuthorSinglePage }}
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Isi Tanggal Berita -->
+                <div class="row div-isi-berita">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <p class="text-berita font-roboto-slab" [innerHTML]="IsiBeritaSinglePage"></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p-2">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="col-lg-12 col-md-12 col-sm-12 mb-2">
+                                    <h5 class="font-roboto-slab">Berita Terbaru</h5>
+                                </div>
+                                <app-recent-post></app-recent-post>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p-2">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="col-lg-12 col-md-12 col-sm-12 mb-2">
+                                    <h5 class="font-roboto-slab">Tajuk Pariwara</h5>
+                                </div>
+                                <app-recent-post></app-recent-post>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <app-footer></app-footer>
+
+        <app-whatsapp-floating></app-whatsapp-floating>
+    </div>
+</section>

@@ -1,0 +1,49 @@
+a.float {
+  position: fixed;
+  width: 380px;
+  height: 60px;
+  bottom: 40px;
+  right: 40px;
+  background-color: #18a14b;
+  color: #fff;
+  border-radius: 50px;
+  text-align: center;
+  box-shadow: 2px 2px 3px #999;
+  z-index: 100;
+  font-size: 17px;
+  text-decoration: none !important;
+}
+
+.my-float {
+  margin-top: 23px;
+}
+
+@media only screen and (max-width: 575.98px) {
+  a.float {
+    position: fixed;
+    width: 260px;
+    height: 60px;
+    bottom: 25px;
+    right: 20px;
+    font-size: 13px;
+  }
+
+  .my-float {
+    margin-top: 26px;
+  }
+}
+
+@media only screen and (max-width: 767.98px) {
+  a.float {
+    position: fixed;
+    width: 260px;
+    height: 60px;
+    bottom: 25px;
+    right: 20px;
+    font-size: 13px;
+  }
+
+  .my-float {
+    margin-top: 26px;
+  }
+}

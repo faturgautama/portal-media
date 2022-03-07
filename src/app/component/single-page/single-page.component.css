@@ -1,0 +1,54 @@
+p.text-category {
+  font-size: 15px;
+  color: #4299e1;
+  margin-bottom: 0px;
+  font-weight: 600;
+}
+
+h3.text-title {
+  color: black;
+}
+
+p.text-tanggal {
+  font-size: 13px;
+  color: rgb(114, 114, 114);
+  margin-bottom: 0px;
+  font-weight: 600;
+}
+
+p.text-author {
+  font-size: 14px;
+  color: black;
+  margin-bottom: 1em;
+  font-weight: 500;
+}
+
+p.text-berita {
+  font-size: 17px;
+  color: black;
+  margin-bottom: 1.5em;
+}
+
+img.image-berita {
+  height: 100%;
+  max-height: 100%;
+  width: 100%;
+  max-width: 100%;
+  border-radius: 1%;
+}
+
+.col-lg-12.col-md-12.col-sm-12.col-xs-12.div-image {
+  border-radius: 1%;
+  margin-bottom: 1em;
+  padding: 2em;
+}
+
+.row.div-isi-berita {
+  text-align: justify;
+}
+
+@media only screen and (max-width: 576px) {
+  section#single-page {
+    overflow-x: hidden;
+  }
+}

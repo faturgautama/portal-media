@@ -1,0 +1,51 @@
+<nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light" [hidden]="isHidden">
+    <div class="container">
+        <a class="navbar-brand font-roboto-slab" routerLink="home">
+            Portal
+            <br>
+            <small>Media</small>
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
+            aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarScroll">
+            <ul class="navbar-nav mx-auto my-2 my-lg-0">
+                <li class="nav-item dropdown dropdown-hover" *ngFor="let item of navbarMenu">
+                    <a class="nav-link font-noto-sans" [class.dropdown-toggle]="item.Child?.length > 0" id="dropdown"
+                        [attr.data-bs-toggle]="item.Child?.length > 0 ? 'dropdown' : null "
+                        [attr.aria-haspopup]="item.Child?.length > 0 ? 'true' : 'false' "
+                        [attr.aria-expanded]="item.Child?.length > 0 ? 'false' : 'true' "
+                        (click)="onNavigatePage($event, item)">
+                        {{ item.NamaMenu }}
+                    </a>
+                    <div class="dropdown-menu animation-dropdown-parents bg-light" aria-labelledby="dropdown">
+                        <div *ngFor="let child of item.Child" class="dropdown dropdown-submenu dropright">
+                            <a class="dropdown-item dropdown" style="cursor: pointer;"
+                                (click)="onNavigatePage($event, child)">
+                                <div class="row">
+                                    <div class="col-lg-1 col-md-1 col-sm-1 pl-1">
+                                        <i class="fa fa-cube"></i>
+                                    </div>
+                                    <div class="col-lg-10 col-md-10 col-sm-10">
+                                        {{ child.NamaMenu }}
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <form class="d-flex">
+                <ul class="navbar-nav ml-auto my-2 my-lg-0">
+                    <li class="nav-item" [hidden]="!isAdmin">
+                        <a class="nav-link font-noto-sans">
+                            <i class="fas fa-search"></i>
+                        </a>
+                    </li>
+                </ul>
+            </form>
+        </div>
+    </div>
+</nav>

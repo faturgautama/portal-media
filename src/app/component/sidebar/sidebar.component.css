@@ -1,0 +1,80 @@
+.active {
+  margin-left: -250px;
+}
+
+a[data-toggle="collapse"] {
+  position: relative;
+}
+
+.dropdown-toggle::after {
+  display: block;
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+}
+
+@media (max-width: 768px) {
+  #sidebar {
+    margin-left: 0;
+  }
+  #sidebar.active {
+    margin-left: -250px;
+  }
+}
+
+#sidebar {
+  /* don't forget to add all the previously mentioned styles here too */
+  min-width: 250px;
+  max-width: 250px;
+  min-height: 100vh;
+  background: #f8f9fa;
+  color: black !important;
+  transition: all 0.3s;
+  position: fixed;
+  z-index: 2;
+  box-shadow: 0.1rem 0 0 rgba(0, 0, 0, 0.075) !important;
+}
+
+#sidebar .sidebar-header {
+  padding: 15px 20px 15px 20px;
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+  margin-bottom: 0.25em;
+  background: #f8f9fa;
+  font-size: 20px;
+  border-bottom: 1px solid #4299e1;
+}
+
+#sidebar ul.components {
+  padding: 20px 0;
+}
+
+#sidebar ul a.nav-link {
+  color: rgb(114, 114, 114);
+  padding: 10px;
+}
+
+#sidebar ul li a {
+  padding: 10px 20px 10px 20px;
+  font-size: 1.1em;
+  display: block;
+}
+
+#sidebar ul li a:hover {
+  color: #f8f8f8;
+  background: #4299e1;
+}
+
+#sidebar ul li.active > a,
+a[aria-expanded="true"] {
+  color: #fff;
+  background: #4299e1;
+}
+
+ul ul a {
+  font-size: 0.9em !important;
+  padding-left: 30px !important;
+  background: #4299e1;
+  text-decoration: none;
+}

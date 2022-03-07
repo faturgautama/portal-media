@@ -1,0 +1,111 @@
+<app-navbar (onClickBars)="onOpenSidebar($event)" [isAdmin]="false" [navbar-menu]="navbarMenu"></app-navbar>
+
+<section id="body">
+    <div class="">
+        <app-sidebar [isSidebarOpen]="isSidebarOpen" [sidebarHeader]="'Kategori'" [sidebarMenu]="sidebarMenu">
+        </app-sidebar>
+
+        <div class="content">
+            <!-- Carousel -->
+            <div class="row mx-0 mb-4">
+                <div class="col-lg-12 col-md-12 col-sm-12 px-0">
+                    <app-carousel></app-carousel>
+                </div>
+            </div>
+
+            <!-- Popular Posts -->
+            <div class="container">
+                <div class="row mx-0 mb-4">
+                    <div class="col-lg-12 col-md-12 col-sm-12 px-0 py-4 mb-2 text-center">
+                        <h4 class="font-roboto-slab">Berita Terpopuler</h4>
+                        <p class="font-noto-sans text-description">Dont miss to check out our most popular posts</p>
+                    </div>
+                    <div class="col-lg-12 col-md-12 col-sm-12 px-0 mb-2">
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12 text-center" *ngIf="PopularPosts.length < 1">
+                                <app-loading></app-loading>
+                                <h3 style="color: #4299e1">Loading</h3>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12">
+                                <div class="row">
+                                    <div class="col-lg-3 col-md-3 col-sm-3 mb-2"
+                                        *ngFor="let posts of PopularPosts; let i = index">
+                                        <app-single-card [ImageSingleCard]="posts.FotoBerita"
+                                            [JudulSingleCard]="posts.JudulBerita"
+                                            [KategoriSingleCard]="posts.KategoriBerita"
+                                            [TanggalSingleCard]="posts.TanggalBerita"
+                                            [TotalViewSingleCard]="posts.JumlahVisit" [isAdmin]="false"
+                                            (onClickedReadMore)="onClickReadMore(posts)">
+                                        </app-single-card>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Advertising -->
+            <div class="container">
+                <div class="row mx-0 mb-5">
+                    <div class="col-lg-12 col-md-12 col-sm-12 px-0 py-4 mb-2 text-center">
+                        <h4 class="font-roboto-slab">Tajuk Pariwara</h4>
+                        <p class="font-noto-sans text-description">Dont miss to check out our partner</p>
+                    </div>
+                    <div class="col-lg-12 col-md-12 col-sm-12 px-0">
+                        <app-newsletter></app-newsletter>
+                    </div>
+                </div>
+            </div>
+
+            <!-- News -->
+            <div class="container">
+                <div class="row mx-0 mb-4">
+                    <div class="col-lg-8 col-md-8 col-sm-8 ps-0" id="single-card-read-more">
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12 text-center" *ngIf="Berita.length < 1">
+                                <app-loading></app-loading>
+                                <h3 style="color: #4299e1">Loading</h3>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-sm-12 mb-3" *ngFor="let posts of Berita; let i = index">
+                                <app-single-card-read-more [JudulSingleCard]="posts.JudulBerita"
+                                    [ImageSingleCard]="posts.FotoBerita" [KategoriSingleCard]="posts.KategoriBerita"
+                                    [TanggalSingleCard]="posts.TanggalBerita" [TotalViewSingleCard]="posts.JumlahVisit"
+                                    [DeskripsiBeritaSingleCard]="posts.DeskripsiSingkat"
+                                    (onClickedReadMore)="onClickReadMore(posts)">
+                                </app-single-card-read-more>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-4 pe-0" id="social-links">
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12 mb-2">
+                                <app-social-links></app-social-links>
+                            </div>
+                            <div class="col-lg-12 col-md-12 col-sm-12">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="col-lg-12 col-md-12 col-sm-12 mb-2">
+                                            <h5 class="font-roboto-slab">Berita Terbaru</h5>
+                                        </div>
+                                        <app-recent-post></app-recent-post>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <app-footer></app-footer>
+
+            <app-whatsapp-floating></app-whatsapp-floating>
+        </div>
+    </div>
+</section>

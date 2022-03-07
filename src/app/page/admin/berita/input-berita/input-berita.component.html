@@ -1,0 +1,133 @@
+<section id="input-berita">
+    <form [formGroup]="formInputBerita" (ngSubmit)="onSubmitForm(formInputBerita.value)">
+        <div class="row">
+
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                <!-- Judul Berita -->
+                <div class="mb-3">
+                    <label for="JudulBerita" class="form-label">Judul Berita</label>
+                    <input type="text" class="form-control" [id]="'JudulBerita'" formControlName="JudulBerita">
+
+                    <div *ngIf="JudulBerita.touched && JudulBerita.invalid" class="alert alert-danger p-1 mt-1 mb-0">
+                        <div *ngIf="JudulBerita.errors.required">
+                            Judul Berita Tidak Boleh Kosong
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Kategori Berita -->
+                <div class="mb-3">
+                    <label for="IdKategoriBerita" class="form-label">Kategori Berita</label>
+                    <select type="text" class="form-select" [id]="'IdKategoriBerita'" formControlName="IdKategoriBerita"
+                        (change)="onChangeKategoriBerita($event)">
+                        <option selected>Open this select menu</option>
+                        <option value="1" text="Ekonomi">Ekonomi</option>
+                        <option value="2" text="Kesehatan">Kesehatan</option>
+                        <option value="3" text="Keluhan">Keluhan</option>
+                        <option value="4" text="Ilmiah Warga">Ilmiah Warga</option>
+                    </select>
+
+                    <div *ngIf="IdKategoriBerita.touched && IdKategoriBerita.invalid"
+                        class="alert alert-danger p-1 mt-1 mb-0">
+                        <div *ngIf="IdKategoriBerita.errors.required">
+                            Kategori Berita Tidak Boleh Kosong
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Foto Berita -->
+                <div class="mb-3">
+                    <label for="FotoBerita" class="form-label">Foto Berita</label>
+                    <input type="file" class="form-control" [id]="'FotoBerita'" formControlName="FotoBerita"
+                        (change)="onChangeFoto($event)">
+
+                    <div *ngIf="FotoBerita.touched && FotoBerita.invalid" class="alert alert-danger p-1 mt-1 mb-0">
+                        <div *ngIf="FotoBerita.errors.required">
+                            Foto Berita Tidak Boleh Kosong
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Deskripsi Singkat -->
+                <div class="mb-3">
+                    <label for="DeskripsiSingkat" class="form-label">Deskripsi Singkat</label>
+                    <textarea type="text" class="form-control" [id]="'DeskripsiSingkat'"
+                        formControlName="DeskripsiSingkat" rows="5">
+                    </textarea>
+
+                    <div *ngIf="DeskripsiSingkat.touched && DeskripsiSingkat.invalid"
+                        class="alert alert-danger p-1 mt-1 mb-0">
+                        <div *ngIf="DeskripsiSingkat.errors.required">
+                            Deskripsi Singkat Tidak Boleh Kosong
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                <!-- Isi Berita -->
+                <div class="mb-2">
+                    <label for="IsiBerita" class="form-label">Isi Berita</label>
+
+                    <ejs-richtexteditor #toolsRTE [id]="'IsiBerita'" [toolbarSettings]="toolbarsRTE" [height]="390"
+                        formControlName="IsiBerita">
+                    </ejs-richtexteditor>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                <!-- Lokasi Berita -->
+                <div class="mb-3">
+                    <label for="LokasiBerita" class="form-label">Lokasi Berita</label>
+                    <input type="text" class="form-control" [id]="'LokasiBerita'" formControlName="LokasiBerita">
+
+                    <div *ngIf="LokasiBerita.touched && LokasiBerita.invalid" class="alert alert-danger p-1 mt-1 mb-0">
+                        <div *ngIf="LokasiBerita.errors.required">
+                            Lokasi Berita Tidak Boleh Kosong
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Author Berita -->
+                <div class="mb-3">
+                    <label for="AuthorBerita" class="form-label">Author Berita</label>
+                    <input type="text" class="form-control" [id]="'AuthorBerita'" formControlName="AuthorBerita">
+
+                    <div *ngIf="AuthorBerita.touched && AuthorBerita.invalid" class="alert alert-danger p-1 mt-1 mb-0">
+                        <div *ngIf="AuthorBerita.errors.required">
+                            Author Berita Tidak Boleh Kosong
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Is Popular Post -->
+                <div class="mb-3">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="IsPopularPosts"
+                            (change)="onChangePopularPosts($event)">
+                        <label class="form-check-label" for="IsPopularPosts">
+                            Popular Posts?
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Is Published -->
+                <div class="mb-3">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="IsPublished"
+                            (change)="onChangePublishedPosts($event)" formControlName="IsPublished" checked>
+                        <label class="form-check-label" for="IsPublished">
+                            Publish Segera?
+                        </label>
+                    </div>
+                </div>
+
+                <div class="mb-2">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <button class="btn btn-primary btn-sm" type="submit">Simpan Berita</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</section>

@@ -1,0 +1,18 @@
+p.text-penulis {
+  font-size: 13px;
+  color: #4299e1;
+}
+
+p.text-kepada {
+  font-size: 14px;
+  color: rgb(114, 114, 114);
+}
+
+p.text-isi {
+  font-size: 15px;
+}
+
+li.list-group-item.shadow-sm.rounded.mb-2,
+span.badge.bg-primary {
+  cursor: pointer;
+}

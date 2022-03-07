@@ -1,0 +1,23 @@
+<div class="card cursor-pointer" (click)="onClickReadMore($event)">
+    <div class="card-header bg-light p-0">
+        <img [src]="ImageSingleCard" alt="image-single-card" class="img-card-header">
+    </div>
+    <div class="card-body">
+        <p class="font-noto-sans text-category mb-2">
+            {{ KategoriSingleCard }}
+        </p>
+        <h5 class="font-roboto-slab text-title mb-2">
+            {{ JudulSingleCard }}
+        </h5>
+        <p class="font-noto-sans text-entry mb-2">
+            {{ TanggalSingleCard | date: "dd MMM yyyy" }} &nbsp; <i class="fas fa-eye"></i> {{ TotalViewSingleCard }}
+            Views
+        </p>
+        <p class="font-roboto-slab text-description">
+            {{ DeskripsiBeritaSingleCard }}
+        </p>
+        <p class="font-roboto-slab text-read-more mb-2" (click)="onClickReadMore($event)">
+            Read More
+        </p>
+    </div>
+</div>
